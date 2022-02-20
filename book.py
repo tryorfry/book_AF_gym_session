@@ -18,7 +18,7 @@ def book_next_hour_slot():
     time.sleep(2)
 
     # heroku may run in different location. Hence just enforce timezone so that we book correctly
-    sg_now = datetime.datetime.now(pytz.timezone('Asia/Singapore'))
+    sg_now = datetime.now(pytz.timezone('Asia/Singapore'))
 
     next_hour_datetime = sg_now + timedelta(hours=1)
     next_hour, am_pm = next_hour_datetime.strftime('%I').lstrip('0'), next_hour_datetime.strftime('%p')
