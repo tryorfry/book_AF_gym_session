@@ -19,10 +19,10 @@ In the mobile just visit the api link then it books the next avaliable slot. Int
 User details are stored as the enviornment variable in `.env` and put in `.gitignore` file. However for heroku it has to be set in the `setting -> config vars`
 
 Booking page requires details like this:
-![booking form]('./assets/booking_form.png')
+![booking form](./assets/booking_form.png)
 
 After booking is successful the confirmation mail looks like this:
-![confirmation email]('./assets/confirmation_email.png')
+![confirmation email](./assets/confirmation_email.png)
 
 
 
