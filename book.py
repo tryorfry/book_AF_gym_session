@@ -27,15 +27,15 @@ def book_next_hour_slot():
             #click_point = slot.find_element(By.CSS_SELECTOR, 'div.bl-center')
             driver.execute_script("arguments[0].click();", slot)
 
-            time.sleep(2)
+            time.sleep(1)
             af_center = driver.find_element(By.CSS_SELECTOR, '#booking-content > div.booking-body-cont.unselectable > div.booking-body.clearfix > div > ul > li')
             driver.execute_script("arguments[0].click();", af_center)
 
-            time.sleep(2)
+            time.sleep(1)
             this_slot_session = driver.find_element(By.CSS_SELECTOR, '#booking-content > div.booking-body-cont.unselectable > div.booking-body.clearfix > div > ul > li')
             driver.execute_script("arguments[0].click();", this_slot_session)
 
-            time.sleep(2)
+            time.sleep(1)
             # fill in the form and submit
             firstname = driver.find_element(By.CSS_SELECTOR, 'input.firstname')
             firstname.send_keys(os.environ['firstname'])
@@ -58,7 +58,7 @@ def book_next_hour_slot():
             # remove for now
             comment.send_keys(f"Hello see you.")
 
-            time.sleep(4)
+            #time.sleep(4)
             book_appointment_btn = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
             book_appointment_btn.click()
 
