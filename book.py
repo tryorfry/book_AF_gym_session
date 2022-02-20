@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 def book_next_hour_slot():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()
 
