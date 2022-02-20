@@ -1,8 +1,9 @@
 import re
 import os
 import time
-
 from datetime import datetime, timedelta
+import pytz
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -16,7 +17,10 @@ def book_next_hour_slot():
     driver.get('https://www.picktime.com/AFBL')
     time.sleep(2)
 
-    next_hour_datetime = datetime.now() + timedelta(hours=1)
+    # heroku may run in different location. Hence just enforce timezone so that we book correctly
+    sg_now = datetime.datetime.now(pytz.timezone('Asia/Singapore'))
+
+    next_hour_datetime = sg_now + timedelta(hours=1)
     next_hour, am_pm = next_hour_datetime.strftime('%I').lstrip('0'), next_hour_datetime.strftime('%p')
     next_hour_regex = f"{next_hour}\\s*{am_pm}"
 
