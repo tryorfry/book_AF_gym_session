@@ -53,7 +53,10 @@ def book_next_hour_slot():
             keyfob.send_keys(os.environ['key'])
 
             comment = driver.find_element(By.CSS_SELECTOR, 'textarea.bookingcomments')
-            comment.send_keys(f"hello see you. \N{slightly smiling face}")
+            #comment.send_keys(f"hello see you. \N{slightly smiling face}")
+            # emoji causes problem when running in  headless mode("Chromedriver only supports characters in the BMP")
+            # remove for now
+            #comment.send_keys(f"Hello see you.")
 
             time.sleep(4)
             book_appointment_btn = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
