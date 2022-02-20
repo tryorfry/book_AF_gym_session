@@ -7,7 +7,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 def book_next_hour_slot():
-    driver = webdriver.Chrome()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()
 
     driver.get('https://www.picktime.com/AFBL')
