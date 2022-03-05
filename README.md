@@ -3,7 +3,9 @@ Booking everytime the slot before you go to gym is pain. This program uses `sele
 
 heroku app: Just visit this website:
 
-[https://fast-springs-39836.herokuapp.com/docs](https://fast-springs-39836.herokuapp.com/docs) and call api /api/gym/book:
+[https://fast-springs-39836.herokuapp.com](https://fast-springs-39836.herokuapp.com)
+
+![Landing Page](./assets/landing_page.png)
 
 ![swagger api](./assets/gym_book_swagger.png)
 
