@@ -1,15 +1,17 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 import book
 
 app = FastAPI()
 
-@app.get('/')
-async def root():
-    return {'message': 'Hello World'}
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get('/api/gym/book')
+@app.get("/")
+async def read_index():
+    return FileResponse('static/index.html')
+
+@app.post('/api/gym/book')
 async def book_gym():
     await book.book_next_hour_slot()
-    return {'message': 'Successfully booked the gym slot and sent email'}    
-
